@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>br.com.techms.HackerRank</AssemblyName>
+    <RootNamespace>br.com.techms.HackerRank</RootNamespace>
+  </PropertyGroup>
+
+</Project>
