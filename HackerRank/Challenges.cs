@@ -7,7 +7,7 @@ using System.Text;
 
 namespace br.com.techms.HackerRank
 {
-    public class Desafios
+    public class Challenges
     {
         // Complete the plusMinus function below.
         public static IList<string> PlusMinus(int[] arr)
@@ -42,21 +42,6 @@ namespace br.com.techms.HackerRank
 
             IList<string> result = new List<string>();
 
-            
-
-            //int qtdeNeg = arr.Select((v, i) => new { i, v })
-            //    .Where(t => t.v < 0)
-            //    .Select(t => t.i)
-            //    .Count();
-            //int qtdeZero = arr.Select((v, i) => new { i, v })
-            //    .Where(t => t.v == 0)
-            //    .Select(t => t.i)
-            //    .Count();
-            //int qtdePos = arr.Select((v, i) => new { i, v })
-            //    .Where(t => t.v > 0)
-            //    .Select(t => t.i)
-            //    .Count();
-
             int qtdeNeg = arr
                 .Where(t => t < 0)
                 .Select(t => t)
@@ -76,30 +61,13 @@ namespace br.com.techms.HackerRank
             Decimal ratiosNeg = (Decimal)qtdeNeg / total;
             Decimal ratiosZero = (Decimal)qtdeZero / total;
 
-            
-
-            //Debug.Print();
-            Console.WriteLine(ratiosPos.ToString("N6"));
-            Console.WriteLine(ratiosNeg.ToString("N6"));
-            Console.WriteLine(ratiosZero.ToString("N6"));
+            //Console.WriteLine(ratiosPos.ToString("N6"));
+            //Console.WriteLine(ratiosNeg.ToString("N6"));
+            //Console.WriteLine(ratiosZero.ToString("N6"));
 
             result.Add(ratiosPos.ToString("N6"));
             result.Add(ratiosNeg.ToString("N6"));
             result.Add(ratiosZero.ToString("N6"));
-
-
-            /*
-             var arrayTemp = (from element in arr orderby element ascending select element).ToArray();
-
-
-             var arrayTempZero = arrayTemp.Select((s, i) => new {i, s})
-                 .Where(t => t.s == 0)
-                 .Select(t => t.i)
-                 .ToList();
-            */
-
-
-
 
             return result;
 
@@ -110,10 +78,6 @@ namespace br.com.techms.HackerRank
             if (n > 0 && n <= 100)
             {
                 StringBuilder staircase = new StringBuilder();
-
-                
-               // char padLeft = ' ';
-               // char padRight = '#';
 
                 for (int x = 0; x < n; x++)
                 {
@@ -129,12 +93,6 @@ namespace br.com.techms.HackerRank
                         tmpLinha += "#";
                     }
 
-
-
-                    //tmpLinha.PadLeft(n, );
-                    //tmpLinha.PadLeft((n - x - 1));
-                    //tmpLinha.PadRight(n, padRight);
-
                     staircase.AppendLine(tmpLinha);
                 }
 
@@ -148,7 +106,7 @@ namespace br.com.techms.HackerRank
         }
 
         // Complete the miniMaxSum function below.
-        public static void MiniMaxSum(int[] arr)
+        public static string MiniMaxSum(int[] arr)
         {
 
             {
@@ -167,10 +125,6 @@ namespace br.com.techms.HackerRank
                     {
                         throw new ArgumentException("Array members must be between 1 and 1.000.000.000");
                     }
-
-
-                    //var arrayTemp = (from element in arr orderby element ascending select element).ToArray();
-
 
                     long[] arrayTemp = Array.ConvertAll<int, long>((from element in arr orderby element ascending select element).ToArray(),
                         delegate (int i)
@@ -208,6 +162,8 @@ namespace br.com.techms.HackerRank
                 }
 
                 Console.WriteLine("{0} {1}", somaMin, somaMax);
+                
+                return $"{somaMin} {somaMax}";
             }
         }
 
@@ -229,13 +185,13 @@ namespace br.com.techms.HackerRank
             }
             else if (qtdeIrreg > 0)
             {
-                return ar.Where(n => n <= 10000000 && n >= 1)
-                    .Select(n => n)
-                    .Where(t => t == maxAr)
-                    .Select(t => t)
-                    .Count();   
+                //return ar.Where(n => n <= 10000000 && n >= 1)
+                //    .Select(n => n)
+                //    .Where(t => t == maxAr)
+                //    .Select(t => t)
+                //    .Count();   
 
-                // throw new ArgumentException("Array members values must be between 1 and 10.000.000");
+                throw new ArgumentException("Array members values must be between 1 and 10.000.000");
             }
             else
             {
@@ -263,15 +219,48 @@ namespace br.com.techms.HackerRank
             return result;
         }
 
-        /*
- * Complete the jumpingRooks function below.
- */
-        public static int JumpingRooks(int k, string[] board)
+         public static int JumpingRooks(int k, string[] board)
         {
             int result = 0;
 
 
             return result;
         }
+
+        /// <summary>
+        /// Complete the 'gradingStudents' function below.
+        /// 
+        /// </summary>
+        /// <param name="grades">The function accepts INTEGER_ARRAY grades as parameter.</param>
+        /// <returns>The function is expected to return an INTEGER_ARRAY.</returns>
+        public static List<int> GradingStudents(List<int> grades)
+         {
+             List<int> result = new List<int>();
+             foreach (var item in grades)
+             {
+                 if (item < 38)
+                 {
+                     result.Add(item);
+                 }            
+                 else
+                 {
+                     if (item % 5 > 2)
+                     {
+                         int multp = item / 5;
+                         multp++;
+                         result.Add(multp*5);
+                     }
+                     else
+                     {
+                        result.Add(item);
+                     }
+                 }
+             }
+
+             return result;
+         }
+
+
+
     }
 }

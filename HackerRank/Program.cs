@@ -5,7 +5,11 @@ using System.Linq;
 
 namespace br.com.techms.HackerRank
 {
-    class Result
+
+    /// <summary>
+    /// Primeiro Desafio
+    /// </summary>
+    public class Result
     {
 
         /*
