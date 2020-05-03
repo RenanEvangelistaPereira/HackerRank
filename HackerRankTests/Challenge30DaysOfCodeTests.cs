@@ -20,5 +20,25 @@ namespace br.com.techms.HackerRank.Tests
 
             Assert.AreEqual(15, result);
         }
+
+        [TestMethod()]
+        public void DayThreeTest()
+        {
+            // input n => 1 <= n <= 100
+            int n0 = 3;
+            int n1 = 24;
+
+            // out put
+            string expectedOut0 = "Weird";
+            string expectedOut1 = "Not Weird";
+
+
+            // Sample Case 0 -> n0 <- expectedOut0
+            Assert.AreEqual(expectedOut0, Challenge30DaysOfCode.DayThree(n0));
+
+            // Sample Case 1 -> n1 <- expectedOut1
+            Assert.AreEqual(expectedOut1, Challenge30DaysOfCode.DayThree(n1));
+
+        }
     }
 }
