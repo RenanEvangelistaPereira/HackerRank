@@ -53,6 +53,18 @@ namespace br.com.techms.HackerRank
             Console.WriteLine($"{s}{sT}");
         }
 
+        /// <summary>
+        /// Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost.
+        /// Note: Be sure to use precise values for your calculations, or you may end up with an incorrectly rounded result!
+        /// </summary>
+        /// <param name="meal_cost">The first line has a double, mealCost (the cost of the meal before tax and tip).</param>
+        /// <param name="tip_percent">The second line has an integer, tipPercent (the percentage of mealCost being added as tip).</param>
+        /// <param name="tax_percent">The third line has an integer, taxPercent (the percentage of mealCost being added as tax).</param>
+        public static int DayTwo(double meal_cost, int tip_percent, int tax_percent)
+        {
+            double totalCost = meal_cost + (meal_cost * tip_percent / 100) + (meal_cost * tax_percent / 100);
+            return Convert.ToInt32(totalCost);
+       }
     }
 
 
