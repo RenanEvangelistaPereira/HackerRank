@@ -3,6 +3,7 @@ using br.com.techms.HackerRank;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace br.com.techms.HackerRank.Tests
 {
@@ -38,6 +39,16 @@ namespace br.com.techms.HackerRank.Tests
 
             // Sample Case 1 -> n1 <- expectedOut1
             Assert.AreEqual(expectedOut1, Challenge30DaysOfCode.DayThree(n1));
+
+        }
+
+        [TestMethod()]
+        public void DayFourTest()
+        {
+            //s.Count(c => (c == '\n'))
+            string result = Challenge30DaysOfCode.DayFour(4, new int[] {-1, 10, 16, 18});
+            int lines = result.Count(c => (c == '\r'));
+            Assert.AreEqual(13, lines);
 
         }
     }

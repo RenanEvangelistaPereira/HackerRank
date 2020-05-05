@@ -107,7 +107,96 @@ namespace br.com.techms.HackerRank
             return validKindOfResults["3"].ToString(); 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t">1 <= T <= 4  --> The first line contains an integer that denotes the number of test cases</param>
+        /// <param name="ages">-5 <= age <= 30  --> An array that each member have an integer denoting the Age of a Person instance</param>
+        /// <returns></returns>
+        public static string DayFour(int t, int[] ages)
+        {
+            int T = t;
+            for (int i = 0; i < T; i++)
+            {
+                int age = ages[i];
+                PersonDayFour p = new PersonDayFour(age);
+                
+                p.AmIOld();
+                
+                for (int j = 0; j < 3; j++)
+                {
+                    p.YearPasses();
+                }
+                p.AmIOld();
+                PersonDayFour.Log = " \n";
+            }
+            return PersonDayFour.Log;
+        }
     }
 
+    public class PersonDayFour
+    {
+        private int age;
+        private static StringBuilder log = new StringBuilder();
+        public PersonDayFour(int initialAge)
+        {
+            
+            // Add some more code to run some checks on initialAge
+            if (initialAge < 0)
+            {
+                string invalidAge = "Age is not valid, setting age to 0.";
+                Console.WriteLine(invalidAge);
+                PersonDayFour.Log = invalidAge;
+                this.Age = 0;
+            }
+            else
+            {
+                this.Age = (initialAge <=30) ? initialAge : 30;
+            }
+            
+        }
+
+        public int Age
+        {
+            get => age;
+            set => age = value;
+        }
+
+        public static string Log
+        {
+            get => log.ToString();
+            set => log.AppendLine(value);
+        }
+
+        public void AmIOld()
+        {
+            // Do some computations in here and print out the correct statement to the console 
+            if (this.Age < 13)
+            {
+                const string young = "You are young.";
+                Console.WriteLine(young);
+                PersonDayFour.Log = young;
+            }
+            else if (Age < 18)
+            {
+                const string teenager = "You are a teenager.";
+               Console.WriteLine(teenager);
+               PersonDayFour.Log = teenager;
+            }
+            else
+            {
+                const string old = "You are old.";
+                Console.WriteLine(old);
+                PersonDayFour.Log = old;
+            }
+        }
+
+        public void YearPasses()
+        {
+            // Increment the age of the person in here
+            this.Age++;
+        }
+
+    }
 
 }
