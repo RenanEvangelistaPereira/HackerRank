@@ -46,9 +46,25 @@ namespace br.com.techms.HackerRank.Tests
         public void DayFourTest()
         {
             //s.Count(c => (c == '\n'))
-            string result = Challenge30DaysOfCode.DayFour(4, new int[] {-1, 10, 16, 18});
+            string result = Challenge30DaysOfCode.DayFour(4, new int[] { -1, 10, 16, 18 });
             int lines = result.Count(c => (c == '\r'));
             Assert.AreEqual(13, lines);
+
+        }
+
+        [TestMethod()]
+        public void DayFiveTest()
+        {
+            int n = 2;//Convert.ToInt32(Console.ReadLine());
+
+            List<OperacaoDayFive> returnDayFive = Challenge30DaysOfCode.DayFive(n);
+
+            foreach (var item in returnDayFive)
+            {
+                Console.WriteLine($"{item.operB} {item.operation} {item.operA} = {item.operResult }");
+            }
+
+            Assert.AreEqual(10, returnDayFive.Count);
 
         }
     }

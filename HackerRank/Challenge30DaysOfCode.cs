@@ -132,6 +132,29 @@ namespace br.com.techms.HackerRank
             }
             return PersonDayFour.Log;
         }
+
+
+        /// <summary>
+        /// Given an integer, n, print its first 10  multiples. Each multiple n x i (where 1 <= i <= 10) should be printed on a new line in the form: n x i = result.
+        /// </summary>
+        /// <param name="n">2 <= n <= 20</param>
+        /// <returns></returns>
+        public static List<OperacaoDayFive> DayFive(int n)
+        {
+            if (n < 2 || n > 20)
+            {
+                throw new ArgumentException("Please verify N. 2 <= n <= 20");
+            }
+
+            List<OperacaoDayFive> result = new List<OperacaoDayFive>();
+
+            for (int x = 1; x <= 10; x++)
+            {
+
+                result.Add(new OperacaoDayFive() { operA = x, operation = 'x', operB = n, operResult = x * n });
+            }
+            return result;
+        }
     }
 
     public class PersonDayFour
@@ -197,6 +220,14 @@ namespace br.com.techms.HackerRank
             this.Age++;
         }
 
+    }
+
+    public class OperacaoDayFive
+    {
+        public int operA;
+        public char operation;
+        public int operB;
+        public int operResult;
     }
 
 }
