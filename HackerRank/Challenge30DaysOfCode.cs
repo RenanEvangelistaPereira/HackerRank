@@ -192,6 +192,13 @@ namespace br.com.techms.HackerRank
             return new List<string>();
 
         }
+
+        public static int[] DaySeven(int[] array)
+        {
+            int[] reverseArray = array.Reverse().ToArray();
+
+            return reverseArray;
+        }
     }
 
     public class PersonDayFour

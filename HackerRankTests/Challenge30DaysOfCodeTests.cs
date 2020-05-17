@@ -99,8 +99,8 @@ namespace br.com.techms.HackerRank.Tests
 
             int n = 2;
 
-            
-            if(n > 10)
+
+            if (n > 10)
             {
                 throw new Exception("Exceed limit of 10");
             }
@@ -110,6 +110,25 @@ namespace br.com.techms.HackerRank.Tests
             List<string> result = Challenge30DaysOfCode.DaySix(n, inputStrings);
 
             Assert.AreEqual(n, result.Count);
+
+        }
+
+        [TestMethod()]
+        public void DaySevenTest()
+        {
+            //int n = Convert.ToInt32(Console.ReadLine());
+            int n = 4;
+
+            //int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+            int[] arr = Array.ConvertAll("1 4 3 2".Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+
+            int[] reverse = Challenge30DaysOfCode.DaySeven(arr);
+
+            Console.WriteLine(string.Join(" ", reverse));
+
+            Assert.AreEqual(arr.Length, reverse.Length);
+
+
 
         }
     }
