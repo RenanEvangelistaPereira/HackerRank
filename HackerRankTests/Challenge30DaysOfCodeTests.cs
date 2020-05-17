@@ -67,5 +67,50 @@ namespace br.com.techms.HackerRank.Tests
             Assert.AreEqual(10, returnDayFive.Count);
 
         }
+
+        [TestMethod()]
+        public void DaySixTest()
+        {
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            //for (int nL = 0; nL < n; nL++)
+            //{
+            //    char[] charArr = (Console.ReadLine()).ToCharArray();
+
+            //    int lenTempS = charArr.Length;
+
+            //    string leftWord = string.Empty;
+            //    string rightWord = string.Empty;
+
+            //    for (int i = 0; i < lenTempS; i++)
+
+            //        if (i % 2 == 0)
+            //        {
+            //            leftWord = leftWord + charArr[i].ToString();
+            //        }
+            //        else
+            //        {
+            //            rightWord = rightWord + charArr[i].ToString();
+            //        }
+
+            //    Console.WriteLine($"{leftWord} {rightWord}");
+
+            //}
+
+            int n = 2;
+
+            
+            if(n > 10)
+            {
+                throw new Exception("Exceed limit of 10");
+            }
+
+            string[] inputStrings = new string[2] { "Racker", "Rank" };
+
+            List<string> result = Challenge30DaysOfCode.DaySix(n, inputStrings);
+
+            Assert.AreEqual(n, result.Count);
+
+        }
     }
 }

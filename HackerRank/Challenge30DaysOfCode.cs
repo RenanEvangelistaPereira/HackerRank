@@ -155,6 +155,43 @@ namespace br.com.techms.HackerRank
             }
             return result;
         }
+
+        public static List<string> DaySix(int t , string[] array )
+        {
+            if (t <= 0) {
+                t = 2;
+                array = new string[] { "Racker", "Rank"};
+            }
+
+            List<string> result = new List<string>();
+
+            for (int nL = 0; nL < t; nL++)
+            {
+                char[] charArr = array[nL].ToCharArray();
+
+                int lenTempS = charArr.Length;
+
+                string leftWord = string.Empty;
+                string rightWord = string.Empty;
+
+                for (int i = 0; i < lenTempS; i++)
+
+                    if (i % 2 == 0)
+                    {
+                        leftWord = leftWord + charArr[i].ToString();
+                    }
+                    else
+                    {
+                        rightWord = rightWord + charArr[i].ToString();
+                    }
+
+                result.Add($"{leftWord} {rightWord}");
+
+            }
+
+            return new List<string>();
+
+        }
     }
 
     public class PersonDayFour
