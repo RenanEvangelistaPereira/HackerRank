@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
@@ -198,6 +199,44 @@ namespace br.com.techms.HackerRank
             int[] reverseArray = array.Reverse().ToArray();
 
             return reverseArray;
+        }
+
+        public static List<string> DayEight(int n, List<string> EntriesList, List<string> QueriesForPhoneBook)
+        {
+
+            List<string> result = new List<string>();
+            Dictionary<string, double> phoneBook = new Dictionary<string, double>();
+            List<string> queries = new List<string>();
+
+            for (int x = 0; x < EntriesList.Count; x++)
+            {
+                string[] tempArr = EntriesList[x].Split(' ');
+                phoneBook.Add(tempArr[0], Convert.ToDouble(tempArr[1]));
+            }
+            for (int x = 0; x < QueriesForPhoneBook.Count; x++)
+            {
+                queries.Add(QueriesForPhoneBook[x]);
+            }
+
+            foreach (var item in queries)
+            {
+                double value;
+
+                if (phoneBook.TryGetValue(item, out value))
+                {
+                    result.Add($"{item}={value}");
+                   // Console.WriteLine($"{item}={value}");
+                }
+                else
+                {
+                    result.Add("Not found");
+                    //Console.WriteLine("Not found");
+                }
+
+            }
+
+            return result;
+
         }
     }
 

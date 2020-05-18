@@ -131,5 +131,18 @@ namespace br.com.techms.HackerRank.Tests
 
 
         }
+
+        [TestMethod()]
+        public void DayEightTest()
+        {
+            int numberOfEntries = 3;
+            List<string> phoneBookEntries = new List<string>() { "sam 99912222", "tom 11122222", "harry 12299933" };
+            List<string> queriesForPhoneBook = new List<string>() { "sam", "edward", "harry" };
+
+            List<string> result = Challenge30DaysOfCode.DayEight(numberOfEntries, phoneBookEntries, queriesForPhoneBook);
+
+            Assert.AreEqual(numberOfEntries, result.Count);
+
+        }
     }
 }
