@@ -238,6 +238,19 @@ namespace br.com.techms.HackerRank
             return result;
 
         }
+
+        /// <summary>
+        /// Factorial
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static long DayNine(long n)
+        {
+            if (n <= 1)
+                return 1;
+            else return n * DayNine(n - 1);
+
+        }
     }
 
     public class PersonDayFour

@@ -144,5 +144,12 @@ namespace br.com.techms.HackerRank.Tests
             Assert.AreEqual(numberOfEntries, result.Count);
 
         }
+
+        [TestMethod()]
+        public void DayNineTest()
+        {
+            int n = 3;
+            Assert.AreEqual(6, Challenge30DaysOfCode.DayNine(n));
+        }
     }
 }
