@@ -160,7 +160,26 @@ namespace br.com.techms.HackerRank.Tests
 
             Console.WriteLine($"{n} --> {count}");
 
-           
+
+
+        }
+
+        [TestMethod()]
+        public void DayElevenTest()
+        {
+            List<string> matrix = new List<string>()
+                                                   { 
+                                                    "1 1 1 0 0 0",
+                                                    "0 1 0 0 0 0",
+                                                    "1 1 1 0 0 0",
+                                                    "0 0 2 4 4 0",
+                                                    "0 0 0 2 0 0",
+                                                    "0 0 1 2 4 0" 
+                                                   };
+
+            int sum = Challenge30DaysOfCode.DayEleven(matrix);
+
+            Assert.AreEqual(19, sum);
 
         }
     }

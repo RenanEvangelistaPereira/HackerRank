@@ -293,6 +293,41 @@ namespace br.com.techms.HackerRank
 
             return max;
         }
+
+        /// <summary>
+        /// Given 6 a 6 2D Array, A:
+        /// Calculate the hourglass sum for every hourglass in A, then print the maximum hourglass sum.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public static int DayEleven(List<string> matrix)
+        {
+            int n = 6;
+            int[][] arr = new int[n][];
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = Array.ConvertAll(matrix[i].Split(' '), arrTemp => Convert.ToInt32(arrTemp));
+            }
+            int[] sum = new int[16];
+            int h = 0;
+
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    sum[h] = arr[i][j] + arr[i][j + 1] + arr[i][j + 2]
+                            + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1]
+                            + arr[i + 2][j + 2];
+                    h++;
+                }
+            }
+            Array.Sort(sum);
+
+            return sum[15];
+
+        }
     }
 
     public class PersonDayFour
