@@ -251,6 +251,48 @@ namespace br.com.techms.HackerRank
             else return n * DayNine(n - 1);
 
         }
+
+        /// <summary>
+        /// Convert integer to binary and count consecutive 1's in the binary representation of "n".
+        /// </summary>
+        /// <param name="n">Integer => 1 <= n <= 10^6 </param>
+        /// <returns>return consecutive 1's in the binary representation of "n"</returns>
+        public static int DayTen(int n)
+        {
+
+            //char[] binary = Convert.ToString(n, 2).ToCharArray();
+
+            //int max = 0;
+            //char last = 'n';
+            //int count = 0;
+
+            //if (n >= 1)
+            //{
+            //    foreach (char pos in binary)
+            //    {
+            //        if (pos == '1' && (last == '1' || last == 'n'))
+            //        {
+            //            count++;
+            //        }
+            //        else
+            //        {
+            //            count = 0;
+            //        }
+
+            //        last = pos;
+
+            //        if (count > max) max = count;
+            //    }
+            //}
+            ////Console.WriteLine(max);
+
+
+            string[] binary = Convert.ToString(n, 2).Split('0');
+            int max = (from e in binary
+                       select e.Length).Max();
+
+            return max;
+        }
     }
 
     public class PersonDayFour

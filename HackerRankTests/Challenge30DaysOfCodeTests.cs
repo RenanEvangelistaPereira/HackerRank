@@ -151,5 +151,17 @@ namespace br.com.techms.HackerRank.Tests
             int n = 3;
             Assert.AreEqual(6, Challenge30DaysOfCode.DayNine(n));
         }
+
+        [TestMethod()]
+        public void DayTenTest()
+        {
+            int n = 439;
+            int count = Challenge30DaysOfCode.DayTen(n);
+
+            Console.WriteLine($"{n} --> {count}");
+
+           
+
+        }
     }
 }
